@@ -1,0 +1,11 @@
+{
+  "name": "getFileList",
+  "description": "Function",
+  "args": [],
+  "kwargs": {
+    "bucketId": "The id of the bucket the files are in"
+  },
+  "http": {
+    "headers": {}
+  }
+}

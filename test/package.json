@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "node index.js"
+  },
+  "dependencies": {
+    "lib": "^2.1.6",
+    "tape": "^4.6.3"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "getBucket",
+  "description": "Function",
+  "args": [],
+  "kwargs": {
+    "bucketId": "The id of the bucket to retrieve"
+  },
+  "http": {
+    "headers": {}
+  }
+}

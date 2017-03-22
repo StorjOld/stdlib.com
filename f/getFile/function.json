@@ -1,0 +1,12 @@
+{
+  "name": "getFile",
+  "description": "Function",
+  "args": [],
+  "kwargs": {
+    "bucketId": "The id of the bucket the file is in",
+    "fileId": "The id of the file to retrieve"
+  },
+  "http": {
+    "headers": {}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "getBucketList",
+  "description": "Function",
+  "args": [],
+  "kwargs": {},
+  "http": {
+    "headers": {}
+  }
+}

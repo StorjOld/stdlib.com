@@ -1,0 +1,11 @@
+{
+  "name": "createBucket",
+  "description": "Function",
+  "args": [],
+  "kwargs": {
+    "bucketName": "name of the bucket"
+  },
+  "http": {
+    "headers": {}
+  }
+}
