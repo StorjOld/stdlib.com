@@ -2,7 +2,7 @@ storj/lib
 =========
 _stdlib service_
 
-![storj-stdlib](./img/storj-stdlib.png)
+![storj-stdlib](http://i.imgur.com/yVPR6Bi.png)
 
 # Usage
 

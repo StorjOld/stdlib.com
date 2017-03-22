@@ -13,7 +13,7 @@ const fileContent = new Buffer(
   'IM A LUMBERJACK AND IM OK, I SLEEP ALL NIGHT AND I WORK ALL DAY'
 );
 
-var storj = require('lib').retrohacker({ key, encryptionKey }).storj['@dev']
+var storj = require('lib').storj({ key, encryptionKey }).lib
 
 test('createBucket', function(t) {
   storj.createBucket({ bucketName }, function(e, meta) {

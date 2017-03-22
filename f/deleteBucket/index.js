@@ -1,4 +1,3 @@
-require('../../deps/storj/node_modules/longjohn');
 var Storj = require('../../deps/storj');
 module.exports = (params, callback) => {
   if(!params.kwargs.bucketId) {

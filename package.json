@@ -1,9 +1,9 @@
 {
   "name": "storj-stdlib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Service",
   "author": "retrohacker <william.jblankenship@gmail.com>",
-  "private": false,
+  "private": true,
   "scripts": {
     "install": "mkdir -p ./deps && cd deps && git clone https://github.com/storj/storj.js storj && cd storj && NODE_ENV=production npm install",
     "test": "cd test && npm install && npm run test"
@@ -11,7 +11,7 @@
   "stdlib": {
     "name": "storj/lib",
     "timeout": 30000,
-    "publish": false,
+    "publish": true,
     "personalize": {
       "keys": ["key", "encryptionKey"],
       "user": []
