@@ -19,7 +19,7 @@ storj.createBucket({ bucketName: 'Hello Future!' }, function(e, metadata) {
 });
 ```
 
-# `createBucket({ bucketName }, function cb(e, metadata) {})`
+### `createBucket({ bucketName }, function cb(e, metadata) {})`
 
 Create a bucket to store files in. Returns a `metadata` object of the form:
 
@@ -30,18 +30,18 @@ Create a bucket to store files in. Returns a `metadata` object of the form:
 }
 ```
 
-# `makePublic({ bucketId, perms }, function cb(e) {})`
+### `makePublic({ bucketId, perms }, function cb(e) {})`
 
 Allow other users to use this bucket. `perms` is an array of permissions other users have for this bucket. Currently supported permissions are:
 
 * `PULL`: Allow users to download files from this bucket
 * `PUSH`: Allow users to upload files to this bucket
 
-# `deleteBucket({ bucketId }, function cb(e) {})`
+### `deleteBucket({ bucketId }, function cb(e) {})`
 
 Remove a bucket.
 
-# `getBucket({ bucketId }, function cb(e, metadata) {})`
+### `getBucket({ bucketId }, function cb(e, metadata) {})`
 
 Get the metadata for a bucket. `cb` will be invoked with a `metadata` object describing the bucket:
 
@@ -52,7 +52,7 @@ Get the metadata for a bucket. `cb` will be invoked with a `metadata` object des
 }
 ```
 
-# `getBucketList(function cb(e, buckets) {})`
+### `getBucketList(function cb(e, buckets) {})`
 
 Get a list of all buckets associated with the currently authenticated account on the storj network. `cb` will be invoked with an array of meta-data about the buckets. Each element of the `buckets` array will have the following properties:
 
@@ -63,7 +63,7 @@ Get a list of all buckets associated with the currently authenticated account on
 }
 ```
 
-# `createFile(fileContent, { bucketId, fileName }, function cb(e, metadata) {})`
+### `createFile(fileContent, { bucketId, fileName }, function cb(e, metadata) {})`
 
 `fileContent` should be a `Buffer`, `bucketId` is the id as returned by `createBucket`, and `fileName` is the desired name for the uploaded file. Then callback will be invoked with a `metadata` object describing the file:
 
@@ -78,11 +78,11 @@ Get a list of all buckets associated with the currently authenticated account on
 
 > Note: the returned name may not match the desired name in rare cases. If you try to upload a file using a name that already exists, a new name will be generated for you.
 
-# `getFile({ bucketId, fileId }, function cb(e, fileContent) {})`
+### `getFile({ bucketId, fileId }, function cb(e, fileContent) {})`
 
 Fetch a file from the Storj network. `fileContent` will be a `Buffer`.
 
-# `getFileList({ bucketId }, function cb(e, files) {})`
+### `getFileList({ bucketId }, function cb(e, files) {})`
 
 Get a list of files stored in a bucket on the Storj network. `files` will be an array of meta-data about the files, each element will have the following properties:
 
@@ -94,6 +94,6 @@ Get a list of files stored in a bucket on the Storj network. `files` will be an 
 }
 ```
 
-# `deleteFile({ bucketId, fileId }, function cb(e) {})`
+### `deleteFile({ bucketId, fileId }, function cb(e) {})`
 
 Remove a bucket.
