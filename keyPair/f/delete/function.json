@@ -1,0 +1,11 @@
+{
+  "name": "delete",
+  "description": "Remove a public key from your account",
+  "args": [],
+  "kwargs": {
+    "publicKey": "The public key you would like to remove from your account"
+  },
+  "http": {
+    "headers": {}
+  }
+}

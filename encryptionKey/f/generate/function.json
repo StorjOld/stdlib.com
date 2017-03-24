@@ -1,0 +1,9 @@
+{
+  "name": "generate",
+  "description": "Returns a new encryption key for encrypting files",
+  "args": [],
+  "kwargs": {},
+  "http": {
+    "headers": {}
+  }
+}

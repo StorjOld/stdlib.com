@@ -1,0 +1,17 @@
+{
+  "name": "storj-stdlib-encryptionkey",
+  "version": "1.0.0",
+  "description": "Manage keys for encrypting files on the Storj network",
+  "author": "retrohacker <william.jblankenship@gmail.com>",
+  "private": true,
+  "scripts": {},
+  "stdlib": {
+    "name": "storj/encryptionKey",
+    "timeout": 30000,
+    "publish": true,
+    "personalize": {
+      "keys": [],
+      "user": []
+    }
+  }
+}

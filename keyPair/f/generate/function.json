@@ -1,0 +1,9 @@
+{
+  "name": "generate",
+  "description": "Returns a new (unregistered) public/private key pair for communicating with the bridge",
+  "args": [],
+  "kwargs": {},
+  "http": {
+    "headers": {}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "list",
+  "description": "Get a list of all buckets on your account",
+  "args": [],
+  "kwargs": {},
+  "http": {
+    "headers": {}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "create",
+  "description": "Create a new bucket to store files in",
+  "args": [],
+  "kwargs": {
+    "bucketName": "name of the bucket"
+  },
+  "http": {
+    "headers": {}
+  }
+}

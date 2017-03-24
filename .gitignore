@@ -1,3 +1,4 @@
-env.json
 deps
+*/deps
+*/env.json
 test/node_modules

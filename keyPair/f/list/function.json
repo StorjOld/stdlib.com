@@ -1,0 +1,9 @@
+{
+  "name": "list",
+  "description": "Get a list of all registered public keys on your account",
+  "args": [],
+  "kwargs": {},
+  "http": {
+    "headers": {}
+  }
+}

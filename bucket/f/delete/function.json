@@ -1,0 +1,11 @@
+{
+  "name": "delete",
+  "description": "Remove a bucket",
+  "args": [],
+  "kwargs": {
+    "bucketId": "The id of the bucket to remove"
+  },
+  "http": {
+    "headers": {}
+  }
+}

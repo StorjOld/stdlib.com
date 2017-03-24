@@ -1,0 +1,12 @@
+{
+  "name": "create",
+  "description": "Upload a file to a bucket",
+  "args": [],
+  "kwargs": {
+    "bucketId": "id of the bucket on the bridge",
+    "fileName": "name of the file being created"
+  },
+  "http": {
+    "headers": {}
+  }
+}

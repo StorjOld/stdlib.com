@@ -1,0 +1,12 @@
+{
+  "name": "delete",
+  "description": "Remove a file from a bucket",
+  "args": [],
+  "kwargs": {
+    "bucketId": "The id of the bucket the file exists in",
+    "fileId": "The id of the file to delete"
+  },
+  "http": {
+    "headers": {}
+  }
+}

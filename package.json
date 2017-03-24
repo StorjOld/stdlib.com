@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "install": "mkdir -p ./deps && cd deps && git clone https://github.com/storj/storj.js storj && cd storj && NODE_ENV=production npm install",
+    "postinstall": "find . -maxdepth 1 -mindepth 1 -type d | grep -v 'deps' | xargs -I{} cp -r ./deps {}/deps",
     "test": "cd test && npm install && npm run test"
   },
   "stdlib": {

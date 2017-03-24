@@ -1,0 +1,11 @@
+{
+  "name": "register",
+  "description": "Register a public key to your account",
+  "args": [],
+  "kwargs": {
+    "publicKey": "The public key you would like to register to your account"
+  },
+  "http": {
+    "headers": {}
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "storj-stdlib-keypair",
+  "version": "1.0.0",
+  "description": "Manage keys for authenticating on the Storj network",
+  "author": "retrohacker <william.jblankenship@gmail.com>",
+  "private": true,
+  "scripts": {},
+  "stdlib": {
+    "name": "storj/keyPair",
+    "timeout": 30000,
+    "publish": true,
+    "personalize": {
+      "keys": [],
+      "user": []
+    }
+  }
+}

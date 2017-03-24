@@ -1,0 +1,11 @@
+{
+  "name": "get",
+  "description": "Retrieve the metadata for a bucket",
+  "args": [],
+  "kwargs": {
+    "bucketId": "The id of the bucket to retrieve"
+  },
+  "http": {
+    "headers": {}
+  }
+}
