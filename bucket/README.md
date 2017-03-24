@@ -17,6 +17,8 @@ storj.bucket.create({ bucketName: 'Hello Future!' }, function(e, metadata) {
 });
 ```
 
+# API
+
 ### `storj.keyPair.generate(function cb(e, keypair) {})`
 
 Generate a new private/public keypair that can be used to authenticate on the network. The returned keypair will be of the form:
