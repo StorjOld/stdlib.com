@@ -10,7 +10,7 @@
     "timeout": 30000,
     "publish": true,
     "personalize": {
-      "keys": [],
+      "keys": ["basicAuth", "key", "encryptionKey"],
       "user": []
     }
   }

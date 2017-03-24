@@ -1,5 +1,5 @@
 var Storj = require('../../deps/storj');
 module.exports = (params, callback) => {
   var storj = new Storj(params.keys);
-  return getKeyList(callback);
+  return storj.getKeyList(callback);
 };
