@@ -49,7 +49,6 @@ test('storj.keyPair.list', function(t) {
     t.error(e, 'fetched list of keys');
     if(e) { return t.end(); }
     for(var i = 0; i < list.length; i++) {
-      console.log(list[i])
       if(list[i].key === key.publicKey) {
         t.pass('newly registered key listed');
         return t.end();
@@ -64,7 +63,6 @@ test('storj.encryptionKey.generate', function(t) {
   storj.encryptionKey[env].generate(function(e, key) {
     t.error(e, 'generated encryption key');
     encryptionKey = key.encryptionKey;
-    console.log(key)
     return t.end();
   });
 });
@@ -210,7 +208,7 @@ test('storj.bucket.list', function(t) {
 });
 
 test('storj.keyPair.delete', function(t) {
-  storj.keyPair[env].delete(key.publicKey, function(e) {
+  storj.keyPair[env].delete({ publicKey: key.publicKey }, function(e) {
     t.error(e, 'removed key');
     return t.end();
   });

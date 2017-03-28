@@ -17,5 +17,17 @@ Our tests are integration tests that will run against a real stdlib deployment.
 Before testing, it might be handy to run this quick script to upload all of your recent changes to stdlib's dev environment:
 
 ```
-find . -maxdepth 1 -mindepth 1 -type d | grep -v 'deps\|test' | xargs -I{} bash -c 'cd {} && lib up dev'
+find . -maxdepth 1 -mindepth 1 -type d | grep -v '.git\|deps\|test' | xargs -I{} bash -c 'echo "Uploading {}" && cd {} && lib up dev'
 ```
+
+# Deploying
+
+After verifying the tests work in production, you can cut a release.
+
+You can use the same script as above but modified to ship to production:
+
+```
+find . -maxdepth 1 -mindepth 1 -type d | grep -v '.git\|deps\|test' | xargs -I{} bash -c 'echo "Uploading {}" && cd {} && lib up release'
+```
+
+After uploading to production, you can verify the deploy by re-running the tests with `STDLIB_ENV=release`.

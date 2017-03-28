@@ -4,5 +4,7 @@ module.exports = (params, callback) => {
     return callback(new Error('publicKey required'));
   }
   var storj = new Storj(params.keys);
-  storj.removeKey(params.kwargs.publicKey, callback);
+  storj.removeKey(params.kwargs.publicKey, function(e) {
+    return callback(e, {});
+  });
 };
