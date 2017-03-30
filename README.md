@@ -171,6 +171,8 @@ generateKeyPair(function(e, keyPair, encryptionKey) {
 
 > Note: You only need to run this script once. Once you have these values, you should store them in a safe place, and provide them to your services instead of using your email and password.
 
+To play with this example in an interactive playground, visit: https://runkit.com/wblankenship/storj-stdlib-keypair
+
 ## Upload a file
 
 Once you have an encryption key and a private/public key, you are ready to start uploading data to the network, which happens to be incredibly easy!
@@ -204,3 +206,5 @@ createBucket(function(e, meta) {
   console.log(`Created file ${meta.fileId} in bucket ${meta.bucketId}`);
 });
 ```
+
+To play with this example in an interactive playground, visit: https://runkit.com/wblankenship/storj-stdlib-upload

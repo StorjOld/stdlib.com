@@ -1,6 +1,6 @@
 {
   "name": "storj-stdlib-file",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Manage files on the Storj network",
   "author": "retrohacker <william.jblankenship@gmail.com>",
   "private": true,
