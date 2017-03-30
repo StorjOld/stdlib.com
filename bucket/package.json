@@ -1,6 +1,6 @@
 {
   "name": "storj-stdlib-bucket",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Manage buckets on the Storj network",
   "author": "retrohacker <william.jblankenship@gmail.com>",
   "private": true,
