@@ -120,3 +120,87 @@ Get a list of files stored in a bucket on the Storj network. `files` will be an 
 ### `storj.file.delete({ bucketId, fileId }, function cb(e) {})`
 
 Remove a file.
+
+# Examples
+
+## Get a key pair and encryption key
+
+After [signing up for Storj](https://app.storj.io/#/signup), you will have an email and password that you can use for logging into your account. While usernames and passwords work great for humans, they are insecure when used in your applications.
+
+For greater security, Storj allows you to create a private/public keypair which can be added and removed from any account. This means if your keypair gets leaked, you can revoke access to that key without worrying about resetting passwords etc.
+
+Likewise, when uploading a file to the network, it will be encrypted with what is called an encryption key. This means you can maintain fine-grained access to files on the Storj network by managing multiple encryption keys, and that if your username/password or keypair are leaked, your files are still safe from prying eyes.
+
+To create these for one of your services using the storj stdlib services, simply run this script:
+
+```js
+var lib = require('lib');
+var storj;
+
+function generateKeyPair(cb) {
+  storj.keyPair.generate(function (e, keyPair) {
+    if(e) { return cb(e); }
+    return registerKeyPair(keyPair, cb);
+  });
+}
+
+function registerKeyPair(keyPair, cb) {
+  storj.keyPair.register({ publicKey: keyPair.publicKey }, function (e) {
+    if(e) { return cb(e); }
+    return generateEncryptionKey(keyPair, cb)
+  });
+}
+
+function generateEncryptionKey(keyPair, cb) {
+  storj.encryptionKey.generate(function (e, encryptionKey) {
+    if(e) { return cb(e); }
+    return cb(null, keyPair, encryptionKey.encryptionKey);
+  });
+}
+
+var email = 'example@gmail.com';
+var password = 'supersecretpassword';
+storj = lib.storj({ basicAuth: { email, password } });
+generateKeyPair(function(e, keyPair, encryptionKey) {
+  if(e) { return console.log(e) };
+  console.log(`Public key: ${keyPair.publicKey}`);
+  console.log(`Private key: ${keyPair.privateKey}`);
+  console.log(`Encryption key: ${encryptionKey}`);
+});
+```
+
+> Note: You only need to run this script once. Once you have these values, you should store them in a safe place, and provide them to your services instead of using your email and password.
+
+## Upload a file
+
+Once you have an encryption key and a private/public key, you are ready to start uploading data to the network, which happens to be incredibly easy!
+
+```js
+var lib = require('lib');
+
+function createBucket(cb) {
+  // Create a bucket to put files in
+  storj.bucket.create({ bucketName: 'foobar' }, function(e, meta) {
+    if(e) { return cb(e); }
+    return createFile(meta.id, cb);
+  });
+}
+
+function createFile(bucketId, cb) {
+  // Put files in the bucket!
+  var fileName = 'buzzbazz.txt';
+  var fileContent = new Buffer('hello storj!');
+  storj.file.create(fileContent, { fileName, bucketId }, function (e, meta) {
+    if(e) { return cb(e); }
+    return cb(null, { fileId: meta.id, bucketId });
+  });
+}
+
+var key = '[PRIVATE_KEY]';
+var encryptionKey = '[ENCRYPTION_KEY]';
+var storj = lib.storj({ key, encryptionKey })
+createBucket(function(e, meta) {
+  if(e) { return console.log(e) };
+  console.log(`Created file ${meta.fileId} in bucket ${meta.bucketId}`);
+});
+```
